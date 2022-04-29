@@ -21,14 +21,18 @@ namespace ConsoleCommands
 
             try
             {
-                string APIurl = String.Format("", input, sourcelang);
+                string APIurl = String.Format("https://translate.google.com/m?sl={1}&tl={2}&hl=en&q={0}", input, sourcelang, targetlang);
                 string WebResult;
 
                 using (WebClient webClient = new WebClient())
                 {
                     WebResult = webClient.DownloadString(APIurl);
                 }
-                Console.WriteLine("[RECEIVED] => {0}", WebResult.Trim());
+
+                string Result = WebResult.Split(new[] { "<div class=\"result-container\">" }, StringSplitOptions.None)[1];
+                Result = Result.Split("<")[0];
+
+                Console.WriteLine("[RECEIVED] => {0}", Result);
             }
             catch (Exception e)
             {

@@ -1,7 +1,7 @@
 ﻿using ConsoleCommands;
 using System;
 
-namespace Tradutor_Instantâneo
+namespace TradutorInstantaneo
 {
     class Program
     {
