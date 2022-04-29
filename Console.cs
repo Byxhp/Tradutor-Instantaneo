@@ -19,6 +19,9 @@ namespace ConsoleCommands
         {
             try
             {
+                Regex remove = new Regex("[^a-zA-Z0-9 -]"); // Remover símbolos
+                input = remove.Replace(input, "");
+
                 string APIurl = String.Format("https://translate.google.com/m?sl={1}&tl={2}&hl=en&q={0}", input, sourcelang, targetlang);
                 string WebResult;
 
