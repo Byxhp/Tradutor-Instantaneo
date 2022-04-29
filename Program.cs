@@ -28,8 +28,10 @@ namespace TradutorInstantaneo
 
             while (true)
             {
+                Console.Write("[SEND] => ");
                 Console.CursorVisible = true;
-                ConsoleExecCommands.Exec(Console.ReadLine());
+                ConsoleExecCommands.Exec(Console.ReadLine(), SL, TL);
+                Console.Write("");
             }
         }
     }
