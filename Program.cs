@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleCommands;
+using System;
 
 namespace Tradutor_Instantâneo
 {
@@ -6,7 +7,11 @@ namespace Tradutor_Instantâneo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            while (true)
+            {
+                Console.CursorVisible = true;
+                ConsoleExecCommands.Exec(Console.ReadLine());
+            }
         }
     }
 }

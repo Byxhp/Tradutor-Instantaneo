@@ -5,11 +5,14 @@ using System.Text;
 
 namespace ConsoleCommands
 {
-    class ConsoleCommands
+    class ConsoleExecCommands
     {
         public static void Exec(string input)
         {
+            if (string.IsNullOrEmpty(input))
+                return;
             
+            Translate(input);
         }
 
         public static void Translate(string input, string sourcelang = "pt", string targetlang = "en")
