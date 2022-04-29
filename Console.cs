@@ -32,14 +32,15 @@ namespace ConsoleCommands
                 }
 
                 string Result = WebResult.Split(new[] { "<div class=\"result-container\">" }, StringSplitOptions.None)[1];
-                Result = Result.Split("<")[0];
+                Result = Result.Split("<")[0].Replace("&#39;", "'");
 
-                Console.WriteLine("[RECEIVED] <= {0}\n", Result);
+                Console.WriteLine("[RECEIVED] <= {0}\n", Result) ;
             }
             catch (Exception e)
             {
                 Console.WriteLine("[ERROR] => Reason: {0}\n", e);
             }
         }
+
     }
 }

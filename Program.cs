@@ -12,6 +12,7 @@ namespace TradutorInstantaneo
         {
             Console.WriteLine("Olá, configure as línguas abaixo para continuar...\n");
 
+            Console.ForegroundColor = ConsoleColor.White;
             Console.Write("Digite a sigla da sua língua de ORIGEM [PT, EN, ES, etc...]: ");
             SL = Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.Green;
